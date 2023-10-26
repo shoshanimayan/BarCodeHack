@@ -8,7 +8,7 @@ namespace Puzzle
 	{
 
 		///  INSPECTOR VARIABLES       ///
-
+		[SerializeField] private Canvas _puzzleCanvas;
 		///  PRIVATE VARIABLES         ///
 		private PuzzleManagerMediator _mediator;
 		///  PRIVATE METHODS           ///
@@ -17,12 +17,18 @@ namespace Puzzle
 
 		public void Init(PuzzleManagerMediator mediator)
 		{ 
-		_mediator = mediator;
+			_mediator = mediator;
+			EnableCanvas(false);
 		}
 
 		public void EndPuzzle() 
 		{
 			_mediator.EndPuzzle();
+		}
+
+		public void EnableCanvas(bool enable)
+		{ 
+			_puzzleCanvas.enabled = enable;	
 		}
 	}
 }

@@ -24,9 +24,12 @@ namespace Barcode
         private string _currentValue = "";
         private bool _isPlaying = true;
         private BarcodeScannerMediator _mediator;
+
+        private HashSet<string> _barcodeValues;
         ///  PRIVATE METHODS           ///
         private void Awake()
         {
+            _barcodeValues = new HashSet<string>();
             Screen.autorotateToPortrait = false;
             Screen.autorotateToPortraitUpsideDown = false;
         }
@@ -66,22 +69,39 @@ namespace Barcode
                 {
                     _textHeader.text = "";
                 }
-                if (_currentValue != barCodeValue)
+                if (_currentValue != barCodeValue )
                 {
-                    _puzzleButton.gameObject.SetActive(true);
+                    if (_barcodeValues.Contains(barCodeValue))
+                    {
+                        _currentValue = barCodeValue;
 
-                    _currentValue = barCodeValue;
-
-                    _textHeader.text = "Detected: " + barCodeValue;
-                    _restartTime = 1f;
-
-                    // Feedback
-
-                    _audio.Play();
+                        _textHeader.text = "barcode already scanned";
+                        _restartTime = 1f;
+                        _audio.Play();
 
 #if UNITY_ANDROID || UNITY_IOS
-                    Handheld.Vibrate();
+                        Handheld.Vibrate();
 #endif
+
+                    }
+                    else
+                    {
+
+                        _puzzleButton.gameObject.SetActive(true);
+
+                        _currentValue = barCodeValue;
+
+                        _textHeader.text = "Detected: " + barCodeValue;
+                        _restartTime = 1f;
+
+                        // Feedback
+
+                        _audio.Play();
+
+#if UNITY_ANDROID || UNITY_IOS
+                        Handheld.Vibrate();
+#endif
+                    }
                 }
             });
         }
@@ -144,12 +164,14 @@ namespace Barcode
             _isPlaying = false;
             _currentValue = "";
             _textHeader.text = "";
+            _puzzleButton.gameObject.SetActive(false);
+
         }
 
         public void CameraStart()
         {
             _isPlaying = true;
-            _restartTime = 0;
+            _restartTime = Time.realtimeSinceStartup;
 
         }
 
@@ -176,6 +198,8 @@ namespace Barcode
         {
             if (_currentValue != "")
             {
+                _barcodeValues.Add(_currentValue);
+
                 int val = GetDifficultyValue();
                 _mediator.StartPuzzle(val);
             }

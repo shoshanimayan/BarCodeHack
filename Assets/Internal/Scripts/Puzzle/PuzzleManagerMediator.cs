@@ -23,7 +23,7 @@ namespace Puzzle
 
 		private void OnStartPuzzle()
 		{ 
-		
+			_view.EnableCanvas(true);
 		}
 
 
@@ -38,6 +38,7 @@ namespace Puzzle
 		public void EndPuzzle()
 		{
             _signalBus.Fire(new EnableCameraSignal { });
+			_view.EnableCanvas(false);
 
         }
 
@@ -51,6 +52,8 @@ namespace Puzzle
 
 		public void Initialize()
 		{
+			
+			_view.Init(this);
             _signalBus.GetStream<SendScanValueSignal>()
                       .Subscribe(x => SetUpPuzzle()).AddTo(_disposables);
             _signalBus.GetStream<DisableCameraSignal>()

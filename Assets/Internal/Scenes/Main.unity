@@ -316,7 +316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &417737590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2031,6 +2031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4ce1db709b620469bec9005e1eb8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _puzzleCanvas: {fileID: 614989824}
 --- !u!1 &1795026388
 GameObject:
   m_ObjectHideFlags: 0

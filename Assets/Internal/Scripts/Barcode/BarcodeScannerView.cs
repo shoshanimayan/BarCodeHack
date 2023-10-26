@@ -138,10 +138,7 @@ namespace Barcode
             if (char.IsDigit(randomChar))
             {
                 result = int.Parse(randomChar.ToString());
-                if (result < 2)
-                {
-                    result = 2;
-                }
+                
                 if (result > 5)
                 {
                     result %= 5;
@@ -152,10 +149,16 @@ namespace Barcode
                 result = (int)randomChar;
                 result %= 5;
 
-                if (result < 2)
-                {
-                    result = 2;
-                }
+                
+            }
+
+            if (result < 2)
+            {
+                result = 2;
+            }
+            if (result > 5)
+            {
+                result = 5;
             }
 
             return result;

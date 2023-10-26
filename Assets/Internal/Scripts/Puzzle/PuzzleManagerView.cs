@@ -28,7 +28,6 @@ namespace Puzzle
         {
 			if (_activePieces.Length > 0 && RotationCheck(_activePieces))
 			{
-                //EndPuzzle();
                 _endPuzzleButton.SetActive(true);
                 foreach (PuzzlePieceInteractable piece in _activePieces)
                 {
@@ -50,11 +49,12 @@ namespace Puzzle
 		{
 			bool match = true;
 
-			float Z = _frozenPiece.transform.rotation.z;
+			float Z = _frozenPiece.transform.rotation.eulerAngles.z;
 
-			foreach (PuzzlePieceInteractable piece in pieces) 
+
+            foreach (PuzzlePieceInteractable piece in pieces) 
 			{
-				if (Mathf.Abs( piece.transform.rotation.eulerAngles.z-Z)>1)
+				if (Mathf.Abs( piece.transform.rotation.eulerAngles.z-Z)>1f)
 				{
 					match = false; 
 				}
@@ -82,6 +82,7 @@ namespace Puzzle
             }
 			_frozenPiece.FreezePiece(false);
 			_frozenPiece = null;
+            _endPuzzleButton.SetActive(false);
             _mediator.EndPuzzle();
 		}
 

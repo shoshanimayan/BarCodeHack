@@ -49,9 +49,9 @@ namespace Barcode
                 _image.texture = _barcodeScanner.Camera.Texture;
 
                 // Keep Image Aspect Ratio
-                ///var rect = Image.GetComponent<RectTransform>();
-                ///var newHeight = rect.sizeDelta.x * BarcodeScanner.Camera.Height / BarcodeScanner.Camera.Width;
-                ///rect.sizeDelta = new Vector2(rect.sizeDelta.x, newHeight);
+                var rect = _image.GetComponent<RectTransform>();
+                var newHeight = rect.sizeDelta.x * _barcodeScanner.Camera.Height / _barcodeScanner.Camera.Width;
+                rect.sizeDelta = new Vector2(rect.sizeDelta.x, newHeight);
 
                 _restartTime = Time.realtimeSinceStartup;
             };

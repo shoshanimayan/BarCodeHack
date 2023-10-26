@@ -16,10 +16,12 @@ namespace Puzzle
 		[SerializeField] private GameObject[] _tutorialObjects;
 		[SerializeField] private PuzzlePieceInteractable[] _puzzlePieces;
 		[SerializeField] private GameObject _endPuzzleButton;
+		[SerializeField]private GameObject _puzzleContainer;
 		///  PRIVATE VARIABLES         ///
 		private PuzzleManagerMediator _mediator;
 		private PuzzlePieceInteractable[] _activePieces;
 		private PuzzlePieceInteractable _frozenPiece;
+		private bool _completedTutorial;
         ///  PRIVATE METHODS           ///
 
         private void Update()
@@ -40,6 +42,7 @@ namespace Puzzle
         {
             _puzzleCanvas.enabled = false;
             _activePieces = new PuzzlePieceInteractable[] { };
+			_puzzleContainer.SetActive(false);
 
         }
 
@@ -95,7 +98,13 @@ namespace Puzzle
 			{ 
 				tutorial.SetActive(enable);
 			}
-		}
+			if (!enable && !_completedTutorial)
+			{
+				_completedTutorial = true;
+                _puzzleContainer.SetActive(true);
+
+            }
+        }
 
 		public void SetUpPuzzle(int difficulty)
 		{

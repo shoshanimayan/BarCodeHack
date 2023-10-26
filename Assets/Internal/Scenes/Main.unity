@@ -2338,6 +2338,7 @@ MonoBehaviour:
   - {fileID: 1899318308}
   - {fileID: 1477785548}
   _endPuzzleButton: {fileID: 409690749}
+  _puzzleContainer: {fileID: 1859662714}
 --- !u!1 &1704770898
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,10 +32,7 @@ namespace Barcode
             _barcodeValues = new HashSet<string>();
             Screen.autorotateToPortrait = false;
             Screen.autorotateToPortraitUpsideDown = false;
-        }
 
-        private void Start()
-        {
             _puzzleButton.gameObject.SetActive(false);
             // Create a basic scanner
             _barcodeScanner = new Scanner();
@@ -55,6 +52,11 @@ namespace Barcode
 
                 _restartTime = Time.realtimeSinceStartup;
             };
+        }
+
+        private void Start()
+        {
+          
         }
 
         /// <summary>

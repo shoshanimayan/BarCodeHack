@@ -149,7 +149,9 @@ namespace Barcode
             }
             else 
             {
-                result = ((int)char.GetNumericValue(randomChar)) % 5;
+                result = (int)randomChar;
+                result %= 5;
+
                 if (result < 2)
                 {
                     result = 2;

@@ -6,7 +6,6 @@ using BarcodeScanner;
 using TMPro;
 using UnityEngine.UI;
 using BarcodeScanner.Scanner;
-using System;
 
 namespace Barcode
 {
@@ -107,6 +106,37 @@ namespace Barcode
                 }
             }
         }
+
+        private int GetDifficultyValue()
+        {
+            int result = 0;
+
+            char randomChar = _currentValue[Random.Range(0, _currentValue.Length)];
+
+            if (char.IsDigit(randomChar))
+            {
+                result = int.Parse(randomChar.ToString());
+                if (result < 2)
+                {
+                    result = 2;
+                }
+                if (result > 5)
+                {
+                    result %= 5;
+                }
+            }
+            else 
+            {
+                result = ((int)char.GetNumericValue(randomChar)) % 5;
+                if (result < 2)
+                {
+                    result = 2;
+                }
+            }
+
+            return result;
+        }
+
         ///  PUBLIC API                ///
         public void CameraStop()
         {
@@ -139,16 +169,14 @@ namespace Barcode
 
         public void Init(BarcodeScannerMediator mediator)
         {
-            Debug.Log(mediator);
-        _mediator = mediator;
-            Debug.Log(_mediator);
+             _mediator = mediator;
         }
 
         public void StartPuzzle()
         {
             if (_currentValue != "")
             {
-                int val = 1;
+                int val = GetDifficultyValue();
                 _mediator.StartPuzzle(val);
             }
         }

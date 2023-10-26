@@ -12,7 +12,6 @@ public class MainInstaller : MonoInstaller
         SignalBusInstaller.Install(Container);
         Container.BindMediatorView<BarcodeScannerMediator, BarcodeScannerView>();
         Container.BindMediatorView<PuzzleManagerMediator, PuzzleManagerView>();
-        Container.BindMediatorView<PuzzlePieceInteractableMediator, PuzzlePieceInteractableView>();
 
         Container.DeclareSignal<SendScanValueSignal>();
         Container.DeclareSignal<EnableCameraSignal>();

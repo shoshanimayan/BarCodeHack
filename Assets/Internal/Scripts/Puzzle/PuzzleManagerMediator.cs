@@ -15,9 +15,9 @@ namespace Puzzle
 		///  INSPECTOR VARIABLES       ///
 
 		///  PRIVATE VARIABLES         ///
-		private void SetUpPuzzle() {
+		private void SetUpPuzzle(SendScanValueSignal signal) {
 
-            _signalBus.Fire(new DisableCameraSignal {  });
+			_view.SetUpPuzzle(signal.Difficulty);
 
         }
 
@@ -42,6 +42,12 @@ namespace Puzzle
 
         }
 
+		public void DisableCamera() 
+		{
+            _signalBus.Fire(new DisableCameraSignal { });
+
+        }
+
         ///  IMPLEMENTATION            ///
 
         [Inject]
@@ -55,7 +61,7 @@ namespace Puzzle
 			
 			_view.Init(this);
             _signalBus.GetStream<SendScanValueSignal>()
-                      .Subscribe(x => SetUpPuzzle()).AddTo(_disposables);
+                      .Subscribe(x => SetUpPuzzle(x)).AddTo(_disposables);
             _signalBus.GetStream<DisableCameraSignal>()
                      .Subscribe(x => OnStartPuzzle()).AddTo(_disposables);
         }

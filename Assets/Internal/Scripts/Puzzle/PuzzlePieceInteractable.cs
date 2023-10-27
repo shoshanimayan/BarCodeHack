@@ -53,11 +53,11 @@ namespace Puzzle
                         switch (direction)
                         {
                             case DraggedDirection.Up:
-                                transform.Rotate(Vector3.back, _speed * Time.deltaTime);
+                                transform.Rotate(Vector3.forward, _speed * Time.deltaTime);
 
                                 break;
                             case DraggedDirection.Down:
-                                transform.Rotate(Vector3.forward, _speed * Time.deltaTime);
+                                transform.Rotate(Vector3.back, _speed * Time.deltaTime);
 
                                 break;
                             case DraggedDirection.Left:

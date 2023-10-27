@@ -27,11 +27,9 @@ namespace Puzzle
         }
 
 
-        private Camera _myCam;
-        private Vector3 _screenPos;
+     
         private Vector3 _mousePos;
-        private float _angleOffset;
-        private Collider2D _col;
+       
 
         private PointerEventData _pointerEventData;
 
@@ -90,11 +88,7 @@ namespace Puzzle
 
         }
 
-        private void Start()
-        {
-            _myCam = Camera.main;
-            _col = GetComponent<Collider2D>();
-        }
+      
 
         ///  PUBLIC API                ///
 

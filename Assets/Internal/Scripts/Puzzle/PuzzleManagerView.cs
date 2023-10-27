@@ -127,7 +127,7 @@ namespace Puzzle
                 }
             }
 
-			_frozenPiece = _activePieces[UnityEngine.Random.Range(0, _activePieces.Length + 1)];
+			_frozenPiece = _activePieces[UnityEngine.Random.Range(0, _activePieces.Length )];
 			_frozenPiece.FreezePiece(true);
 
             foreach (PuzzlePieceInteractable piece in _activePieces)

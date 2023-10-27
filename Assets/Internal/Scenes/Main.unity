@@ -428,7 +428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &417737590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,7 +640,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 640, y: 480}
+  m_ReferenceResolution: {x: 800, y: 480}
   m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1144,6 +1144,7 @@ GameObject:
   - component: {fileID: 833337007}
   - component: {fileID: 833337006}
   - component: {fileID: 833337008}
+  - component: {fileID: 833337009}
   m_Layer: 5
   m_Name: P3
   m_TagString: Untagged
@@ -1192,7 +1193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 42a4365d52911814bafd5e2798e25ce9, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1223,6 +1224,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _indicator: {fileID: 450875584}
+  _speed: 50
+--- !u!58 &833337009
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833337004}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.032705408, y: 0}
+  serializedVersion: 2
+  m_Radius: 87.5152
 --- !u!1 &894909884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,6 +1253,7 @@ GameObject:
   - component: {fileID: 894909887}
   - component: {fileID: 894909886}
   - component: {fileID: 894909888}
+  - component: {fileID: 894909889}
   m_Layer: 5
   m_Name: P1
   m_TagString: Untagged
@@ -1283,7 +1302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 42a4365d52911814bafd5e2798e25ce9, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1314,6 +1333,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _indicator: {fileID: 1704770900}
+  _speed: 50
+--- !u!58 &894909889
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894909884}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.51066667}
+  serializedVersion: 2
+  m_Radius: 137.8997
 --- !u!1 &939325821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,6 +1742,7 @@ GameObject:
   - component: {fileID: 1141762437}
   - component: {fileID: 1141762436}
   - component: {fileID: 1141762438}
+  - component: {fileID: 1141762439}
   m_Layer: 5
   m_Name: P2
   m_TagString: Untagged
@@ -1754,7 +1791,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 42a4365d52911814bafd5e2798e25ce9, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1785,6 +1822,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _indicator: {fileID: 112639587}
+  _speed: 50
+--- !u!58 &1141762439
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141762434}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.39932913, y: 0}
+  serializedVersion: 2
+  m_Radius: 112.81337
 --- !u!1 &1165260741
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,6 +2258,7 @@ GameObject:
   - component: {fileID: 1477785547}
   - component: {fileID: 1477785546}
   - component: {fileID: 1477785548}
+  - component: {fileID: 1477785549}
   m_Layer: 5
   m_Name: P5
   m_TagString: Untagged
@@ -2252,7 +2307,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 42a4365d52911814bafd5e2798e25ce9, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2283,6 +2338,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _indicator: {fileID: 643346993}
+  _speed: 50
+--- !u!58 &1477785549
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477785544}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.24278428, y: 0}
+  serializedVersion: 2
+  m_Radius: 37.3911
 --- !u!1 &1661426307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,7 +2742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -31.7}
   m_SizeDelta: {x: -540, y: -180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1899318304
@@ -2685,6 +2757,7 @@ GameObject:
   - component: {fileID: 1899318307}
   - component: {fileID: 1899318306}
   - component: {fileID: 1899318308}
+  - component: {fileID: 1899318309}
   m_Layer: 5
   m_Name: P4
   m_TagString: Untagged
@@ -2733,7 +2806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 42a4365d52911814bafd5e2798e25ce9, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2764,6 +2837,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _indicator: {fileID: 1780244389}
+  _speed: 50
+--- !u!58 &1899318309
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899318304}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.019637397, y: 0}
+  serializedVersion: 2
+  m_Radius: 62.147057
 --- !u!1 &2068954849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2856,7 +2946,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.4
+  m_fontSize: 25.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

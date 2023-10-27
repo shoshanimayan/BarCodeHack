@@ -42,12 +42,8 @@ namespace Puzzle
             {
                 if (_isRotating)
                 {
-                    // Debug.Log("Press position + " + _pointerEventData.pressPosition);
-                    // Debug.Log("End position + " + _pointerEventData.position);
                     Vector3 dragVectorDirection = (_pointerEventData.position - _pointerEventData.pressPosition).normalized;
-                    //Debug.Log("norm + " + dragVectorDirection);
                     var direction = GetDragDirection(dragVectorDirection);
-                    Debug.Log(direction.ToString());
                     if (_mousePos != Input.mousePosition)
                     {
                         switch (direction)
@@ -70,21 +66,7 @@ namespace Puzzle
                     }
 
                 }
-                /*
-                // Debug.Log(_isRotating);
-                if (_isRotating)
-                {
-                    Vector3 vec3 = Input.mousePosition - _screenPos;
-                    Debug.Log(vec3);
-                    float angle = (Mathf.Atan2(vec3.y, vec3.x) * Mathf.Rad2Deg);
-                    Debug.Log(angle);
-                    Debug.Log((angle + _angleOffset + (Time.deltaTime * _speed)));
-
-
-                    transform.eulerAngles = new Vector3(0, 0, (angle + _angleOffset+(Time.deltaTime*_speed)));
-                    
-                }
-                */
+                
             }
             _mousePos = Input.mousePosition;
 
@@ -136,19 +118,12 @@ namespace Puzzle
         public void OnDrag(PointerEventData eventData)
         {
 
-
             _pointerEventData = eventData;
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
             _pointerEventData = eventData;
-            /*
-            _mousePos = _myCam.ScreenToWorldPoint(Input.mousePosition);
-            _screenPos = _myCam.WorldToScreenPoint(transform.position);
-            Vector3 vec3 = Input.mousePosition - _screenPos;
-            _angleOffset =( (Mathf.Atan2(transform.right.y, transform.right.x) - Mathf.Atan2(vec3.y, vec3.x)) * Mathf.Rad2Deg);
-            */
             _isRotating = true;
         }
 
